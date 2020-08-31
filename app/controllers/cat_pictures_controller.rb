@@ -7,8 +7,7 @@ class CatPicturesController < ApplicationController
     end
 
     def show
-		@cat_picture = CatPicture.find(params[:id])
-	end
+        @cat = CatPicture.find(params[:id])
+    end
 
-	
 end
