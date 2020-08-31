@@ -1,5 +1,7 @@
 class CatPicturesController < ApplicationController
 
+        @cat_pictures = CatPicture.all
+        
 
     
     def index

@@ -15,5 +15,6 @@
  *= require main
  *= require navbar
  *= require banner
+ *= require cards
  *= require footer
  */

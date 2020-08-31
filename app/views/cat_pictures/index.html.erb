@@ -1,8 +1,8 @@
-
+<div id="page-container">
 <div class="banner">
         <div class="ban">
           <h1 class="textban" style="font-size:100px">Cats Project</h1>
-          <p>Achate Miaouuuu!</p>
+          <p>Achate Meow Souris Photos!</p>
 
         </div>
       </div>
@@ -12,13 +12,13 @@
     
  	<% @cat_pictures.each do |item|%>
 	    
-	   <div class="col-12 col-sm-8 col-md-6 col-lg-4 ">
-	      	<div class="card">
-			<%= @cat_picture.image_url %>
-			  <h4 class="card-title">@cat_picture.title</h4>
-			  <p class="card-price"><%= @cat_picture.price%></p>
-			  <%link_to "Voir le produit", cat_picture_path(cat_picture.id)%>
-			  <p><button>Ajouter au panier</button></p>
+	   <div class="col-12 col-sm-8 col-md-6 col-lg-4 mt-4">
+	    <div class="card">
+			<%= image_tag item.image_url, size: '300x300', style: "border-radius: 30px;" %>
+			  <h4 class="card-title"><%= item.title %></h4>
+			  <p class="card-price"><%= item.price%>€</p>
+        <%= link_to 'Voir le produit', cat_picture_path(item.id), class: 'btn btn-secondary' %>
+			  
 
 			</div>
 		</div>
@@ -26,3 +26,4 @@
    </div>
 </div>
   
+</div>
