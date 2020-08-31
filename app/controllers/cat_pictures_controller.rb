@@ -1,0 +1,2 @@
+class CatPicturesController < ApplicationController
+end
