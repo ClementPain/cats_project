@@ -13,16 +13,16 @@ require 'faker'
      price:rand(10..60),
      image_url: "https://cdn.radiofrance.fr/s3/cruiser-production/2018/12/9f19b228-269f-4995-ba7f-eda054945811/1136_gettyimages-155607257.jpg")
 
-    Cat_picture.create(title: "Chut, on dort! ",  
+    Cat_picture.create(title: "Chut, on dort!",  
      description:Faker::GreekPhilosophers.quote, 
      price:rand(10..60),
-     image_url: "https://lh3.googleusercontent.com/proxy/XDSEwBcm4DtxvQBZMrLBohC2OLbPFqkrjX7LYa-9a7idvaPMrJXXmIglRW6IG7BuKsa5pemxeR-bhz09oqlDKq94_UVzUmhnI8rU-WI1_L-v5tzU1edlbBk7")
+     image_url: "https://www.zoomalia.com/blogz/1608/adorable-animal-blanket-2722990.jpg")
 
 
     Cat_picture.create(title: "Saluuuut!",  
      description:Faker::GreekPhilosophers.quote, 
      price:rand(10..60),
-     image_url: "https://lemagduchat.ouest-france.fr/images/dossiers/2019-10/chaton-111206.jpg")
+     image_url: "https://ds1.static.rtbf.be/article/image/1240x800/b/8/f/7e8d000bb5fc97185ab4e4b83de7208f-1526644288.png")
 
 
     Cat_picture.create(title: "Ca baille",  
@@ -31,7 +31,7 @@ require 'faker'
      image_url: "https://i.pinimg.com/originals/4b/f6/86/4bf68667464e94d66d54af01a6e1141b.jpg")
 
 
-    Cat_picture.create(title: "Tic et Toc",  
+    Cat_picture.create(title: "Tic et Tac",  
      description:Faker::GreekPhilosophers.quote, 
      price:rand(10..60),
      image_url: "https://i.pinimg.com/564x/ec/b2/c6/ecb2c6e92ba1b6d7fe9e895fbc463381.jpg")
@@ -51,4 +51,10 @@ require 'faker'
      description:Faker::GreekPhilosophers.quote, 
      price:rand(10..60),
      image_url: "https://i.pinimg.com/originals/8b/02/d4/8b02d48a697200e2f6d60efcfd42f74c.jpg")
+
+
+
+
+
+
 

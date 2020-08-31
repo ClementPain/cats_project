@@ -1,0 +1,47 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+         
+    <!-- Title -->
+    <div class="text-center mb-4">
+        <h3>Inscription</h3>
+        <p>Remplissez le formulaire pour vous inscrire</p>
+    </div>
+    <!-- End Title -->
+      
+    <!-- Formulaire -->
+    <div class="container col-md-6 justify-content-sm-center">
+
+        <!-- Case précédent le formulaire -->
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <span class="fa fa-user form__text-inner"></span>
+                </span>
+            </div>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"form-control"  %>
+        </div>
+      
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <span class="fa fa-lock form__text-inner"></span>
+                </span>
+            </div>
+            <%= f.password_field :password, autofocus: true, autocomplete: "password", placeholder:"Mot de passe", class:"form-control"  %>
+        </div>
+
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <span class="fa fa-key"></span>
+                </span>
+            </div>
+            <%= f.password_field :password, autofocus: true, autocomplete: "email", placeholder:"Mot de passe", class:"form-control form__input"  %>
+        </div>
+
+        
+    <div class="actions">
+        <%= f.submit "Se connecter" %>
+    </div>
+        </div>
+<% end %>
