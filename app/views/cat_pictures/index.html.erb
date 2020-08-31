@@ -1,0 +1,21 @@
+
+
+<div class="container">
+  <div class="row">
+    
+ 	<% @cat_pictures.each do |item|%>
+	    
+	   <div class="col-12 col-sm-8 col-md-6 col-lg-4 ">
+	      	<div class="card">
+			<%= @cat_picture.image_url %>
+			  <h4 class="card-title">@cat_picture.title</h4>
+			  <p class="card-price"><%= @cat_picture.price%></p>
+			  <%link_to "Voir le produit", cat_picture_path(cat_picture.id)%>
+			  <p><button>Ajouter au panier</button></p>
+
+			</div>
+		</div>
+		<% end %>	    
+   </div>
+</div>
+  
