@@ -1,0 +1,2 @@
+class CatPicture < ApplicationRecord
+end
