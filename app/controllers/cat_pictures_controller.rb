@@ -10,4 +10,6 @@ class CatPicturesController < ApplicationController
         @cat = CatPicture.find(params[:id])
     end
 
+
+    
 end
