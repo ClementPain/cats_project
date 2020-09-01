@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+
   root 'cat_pictures#index'
   devise_for :users
   resources:cat_pictures
   
   resource :user do
-    resources:carts
+    resources :carts, only: [:index, :create, :destroy]
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :line_cat_pictures
+  
+
+
 end

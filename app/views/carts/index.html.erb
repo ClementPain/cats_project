@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row py-4 justify-content-center">
+        <h2>Panier</h2>
+    </div>
+    <div class="row justify-content-around">
+        <% if @cart.line_cat_pictures.nil? %>
+            <p>Votre panier est vide</p>
+       
+        <%else%>
+            <% @cart.line_cat_pictures.each do |item| %>
+                <%= render partial: "shared/card_cat", locals: {item: item} %>
+            <% end %>
+        <% end %>
+    </div>
+
+    <div class="row justify-content-end pr-4">
+        <h4>Total : <%= @cart.cat_pictures.sum(:price) %> €</h4>
+    </div>
+    <p><%= link_to "Retour aux produits", root_path %></p>
+</div>

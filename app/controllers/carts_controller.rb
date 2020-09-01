@@ -1,11 +1,9 @@
 class CartsController < ApplicationController
-  def show
+  def index
+    @cart = Cart.find_by(user_id:current_user.id) || @cart = Cart.create(user_id:current_user.id)
   end
 
   def create
-  end
-
-  def update
   end
 
   def destroy

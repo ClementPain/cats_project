@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Line Cat Pictures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cart</th>
+      <th>Cat picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @line_cat_pictures.each do |line_cat_picture| %>
+      <tr>
+        <td><%= line_cat_picture.cart %></td>
+        <td><%= line_cat_picture.cat_picture %></td>
+        <td><%= link_to 'Show', line_cat_picture %></td>
+        <td><%= link_to 'Edit', edit_line_cat_picture_path(line_cat_picture) %></td>
+        <td><%= link_to 'Destroy', line_cat_picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Line Cat Picture', new_line_cat_picture_path %>

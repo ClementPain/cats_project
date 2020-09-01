@@ -1,2 +1,8 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+<h2>Panier</h2>
+<ul>
+  <% @cart.line_cat_pictures.each do |item| %>
+    <li><%= item.cat_picture.title %></li>
+  <% end %>
+</ul>
+<p><%= link_to "Retour aux produits", root_path %></p>

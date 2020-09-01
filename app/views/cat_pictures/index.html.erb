@@ -17,9 +17,9 @@
 			<%= image_tag item.image_url, size: '300x300', style: "border-radius: 30px;" %>
 			  <h4 class="card-title"><%= item.title %></h4>
 			  <p class="card-price"><%= item.price%>€</p>
-        <%= link_to 'Voir le produit', cat_picture_path(item.id), class: 'btn btn-secondary' %>
+        <%= link_to 'Voir le produit', cat_picture_path(item.id) %>
+		<%= button_to 'Ajouter au panier', line_cat_picture_path(cat_picture_id: cat_picture), class: 'btn btn-primary' %>
 			  
-
 			</div>
 		</div>
 		<% end %>	    
