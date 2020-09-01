@@ -2,8 +2,8 @@
 /*        FOOTER  OK      */
 /**************************/
  
-.footer {
-    position: absolute;
+#footer {
+    position: relative;
     bottom: 0;
     width: 100%;
     display: block;

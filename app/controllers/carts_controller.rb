@@ -6,6 +6,11 @@ class CartsController < ApplicationController
   def create
   end
 
+  def show
+    @cart = current_user.cart
+  end
+
   def destroy
   end
+
 end

@@ -26,18 +26,22 @@ class LineCatPicturesController < ApplicationController
   # POST /line_cat_pictures
   # POST /line_cat_pictures.json
   def create
-    cat_picture = CatPicture.find(params[:cat_picture_id])
-    @line_cat_picture = @cart.line_cat_pictures.new(cat_picture: cat_picture)
-
-    respond_to do |format|
-      if @line_cat_picture.save
-        format.html { redirect_to @line_cat_picture.cart, notice: 'Line cat picture was successfully created.' }
-        format.json { render :show, status: :created, location: @line_cat_picture }
-      else
-        format.html { render :new }
-        format.json { render json: @line_cat_picture.errors, status: :unprocessable_entity }
-      end
+    if current_user
+      LineCatPicture.create(cart_id:current_user.cart.id, cat_picture_id:params[:cat_picture_id])
+      redirect_to(root_path)
+    else
+      redirect_to(new_user_registration_path)
     end
+    
+    # respond_to do |format|
+    #   if @line_cat_picture.save
+    #     format.html { redirect_to @line_cat_picture.cart, notice: 'Line cat picture was successfully created.' }
+    #     format.json { render :show, status: :created, location: @line_cat_picture }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @line_cat_picture.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /line_cat_pictures/1
@@ -57,11 +61,12 @@ class LineCatPicturesController < ApplicationController
   # DELETE /line_cat_pictures/1
   # DELETE /line_cat_pictures/1.json
   def destroy
-    @line_cat_picture.destroy
-    respond_to do |format|
-      format.html { redirect_to line_cat_pictures_url, notice: 'Line cat picture was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    LineCatPicture.find(params[:id]).delete
+    redirect_to(user_carts_path)
+    # respond_to do |format|
+    #   format.html { redirect_to line_cat_pictures_url, notice: 'Line cat picture was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
   private

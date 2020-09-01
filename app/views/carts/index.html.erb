@@ -7,14 +7,21 @@
             <p>Votre panier est vide</p>
        
         <%else%>
-            <% @cart.line_cat_pictures.each do |item| %>
-                <%= render partial: "shared/card_cat", locals: {item: item} %>
+            <% @cart.line_cat_pictures.each do |line_item| %>
+                <div class="col-md-3 py-3" align="center">
+                    <%= render partial: "shared/card_cat", locals: {item: line_item.cat_picture} %>
+                    <%= button_to 'Retirer du panier', line_cat_picture_path(line_item.id), method: :delete, class: 'btn btn-danger', params: { cat_picture_id: line_item.cat_picture.id } %>
+                </div>
             <% end %>
         <% end %>
     </div>
 
     <div class="row justify-content-end pr-4">
-        <h4>Total : <%= @cart.cat_pictures.sum(:price) %> €</h4>
+        <div class="col-md-2">
+            <h4>Total : <%= @cart.cat_pictures.sum(:price) %> €</h4>
+            <%= button_to 'Passer la commande', class: 'btn btn-success' %>
+        </div>
     </div>
+
     <p><%= link_to "Retour aux produits", root_path %></p>
 </div>

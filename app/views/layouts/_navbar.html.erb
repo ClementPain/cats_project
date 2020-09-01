@@ -40,15 +40,17 @@
     <!-- Panier  -->
 
     <form class="form-inline my-2 my-lg-0">
-      <%= link_to user_carts_path, :action => 'go' do %>  
-        <div class="cart-box">
-          <div class="cart-container">
-            <div class="cart-image">
-                <i class="fas fa-shopping-cart"></i>
-                <div class="cart-counter"><%= current_user.cart.cat_pictures.size %></div>
+      <% if current_user %>
+        <%= link_to user_carts_path, :action => 'go' do %>  
+          <div class="cart-box">
+            <div class="cart-container">
+              <div class="cart-image">
+                  <i class="fas fa-shopping-cart"></i>
+                  <div class="cart-counter"><%= current_user.cart.cat_pictures.size %></div>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <%end%>
 
       <input class="form-control mr-sm-3" type="text" placeholder="Rechercher une image">

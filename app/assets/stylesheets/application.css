@@ -14,7 +14,7 @@
  *= require cat_show
  *= require main
  *= require navbar
- *= require banner
+ *= require carousel
  *= require cards
  *= require footer
  */

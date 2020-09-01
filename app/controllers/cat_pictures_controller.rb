@@ -1,8 +1,4 @@
 class CatPicturesController < ApplicationController
-
-        
-        
-
     
     def index
     	@cat_pictures = CatPicture.all
@@ -12,6 +8,4 @@ class CatPicturesController < ApplicationController
         @cat = CatPicture.find(params[:id])
     end
 
-
-    
 end

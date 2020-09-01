@@ -1,29 +1,61 @@
 <div id="page-container">
-<div class="banner">
-        <div class="ban">
-          <h1 class="textban" style="font-size:100px">Cats Project</h1>
-          <p>Achate Meow Souris Photos!</p>
 
+<header>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <div class="carousel-item active" style="background-image: url('https://alternativi.fr/uploads/articles//les-bienfaits-du-chat-sur-lhomme-e96.jpeg')">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Cats Project</h2>
+          <p class="lead">Achate Meow!</p>
         </div>
       </div>
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('https://www.iams.com/images/default-source/article-image/article_stomach-issues-in-cats-why-cats-vomit-and-what-to-do_header.jpg')">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Cats Project</h2>
+          <p class="lead">Je Souris sur les Photos!</p>
+        </div>
+      </div>
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('https://www.winnfelinefoundation.org/images/default-source/istock-photos/istock-859654404.jpg?sfvrsn=2')">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Cats Project</h2>
+          <p class="lead">Miaounifique!</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  </div>
+</header>
+
 
 <div class="container">
-  <div class="row">
-    
- 	<% @cat_pictures.each do |item|%>
-	    
-	   <div class="col-12 col-sm-8 col-md-6 col-lg-4 mt-4">
-	    <div class="card">
-			<%= image_tag item.image_url, size: '300x300', style: "border-radius: 30px;" %>
-			  <h4 class="card-title"><%= item.title %></h4>
-			  <p class="card-price"><%= item.price%>€</p>
-        <%= link_to 'Voir le produit', cat_picture_path(item.id) %>
-		<%= button_to 'Ajouter au panier', line_cat_picture_path(cat_picture_id: cat_picture), class: 'btn btn-primary' %>
-			  
+  	<div class="row">
+		<% @cat_pictures.each do |item|%>
+			<div class="col-12 col-sm-8 col-md-6 col-lg-4 mt-4">
+				<div class="card">
+					<%= image_tag item.image_url, size: '300x300', style: "border-radius: 30px;" %>
+					<h4 class="card-title"><%= item.title %></h4>
+					<p class="card-price"><%= item.price%>€</p>
+					<%= link_to 'Voir le produit', cat_picture_path(item.id) %>
+					<%= render partial: 'button_add_to_cart', locals: {item: item} %>
+				</div>
 			</div>
-		</div>
 		<% end %>	    
-   </div>
+   	</div>
 </div>
   
 </div>

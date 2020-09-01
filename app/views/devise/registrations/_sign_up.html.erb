@@ -41,7 +41,10 @@
         </div>
 
          <div>
-            <%= f.submit "S'inscrire'" %>
+            <%= f.submit "S'inscrire" %>
         </div>
     </div>
+
 <% end %>
+
+<p>Déjà inscrit? <%= button_to "Se connecter", user_session_path %></p>

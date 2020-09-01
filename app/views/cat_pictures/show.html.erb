@@ -1,26 +1,35 @@
 <div class="container mt-5"  >
     <div class="row justify-content-sm-center" style="height:400px">
-        <div class="col-sm-8 div-img">
-            <img class="img-responsive rounded" src="<%= @cat.image_url %>">
+        <div class="col-sm-8 div-img center">
+            <img class="img-responsive rounded" src="<%= @cat.image_url %>" style='height: 60%; width: 100%;'/>
         </div>
     
         <div class="col-sm-4 bg-light">
-            <h2><%= @cat.title %> </h2>
-            <p><%= @cat.price %> €</p>
-        </div>
-    </div>
-    
-    
+            <div class="row">
+                <h2><%= @cat.title %> </h2>
+            </div>
+            <div class="row">
+                <p><%= @cat.price %> €</p>
+            </div>
+            <!-- Boutons -->
+            <div class="row">
+                <%= render partial: 'button_add_to_cart', locals: {item: @cat} %>
+            </div>
 
-    <div class="row justify-content-sm-center mt-4"> 
-        <h3> Description </h3>
-    </div>
-    
-    <div class="row justify-content-sm-center mt-4">
-        <p><%= @cat.description %></p>
-    </div>
-    
-    <!-- Boutons -->
-    <div class="row">
+            <div class="row mt-4"> 
+                <h4> Description </h4>
+            </div>
+
+            <div class="row mt-2">
+                <p><%= @cat.description %></p>
+            
+                <div class="cont-box mt-4" style="font-size:14px;">
+                    <i class="fas fa-shipping-fast"> LIVRAISON </i> 
+                    <p> Les posters seront envoyés sous format numérique par mail.</p>
+                    <i class="far fa-credit-card"> PAIEMENTS SECURISES </i>
+                    <p> via Paypal ou Carte Bancaire</p>
+                </div>
+            </div> 
+        </div>
     </div>
 </div>

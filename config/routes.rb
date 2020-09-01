@@ -8,8 +8,5 @@ Rails.application.routes.draw do
     resources :carts, only: [:index, :create, :destroy]
   end
 
-  resources :line_cat_pictures
-  
-
-
+  resources :line_cat_pictures, only: [:create, :destroy]
 end
