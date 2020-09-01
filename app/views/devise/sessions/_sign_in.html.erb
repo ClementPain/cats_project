@@ -31,11 +31,14 @@
             <%= f.password_field :password, autofocus: true, autocomplete: "password", placeholder:"Mot de passe", class:"form-control"  %>
         </div>
 
-         <div>
+         <div class="input-group mb-2">
             <%= f.submit "Se connecter" %>
         </div>
 
+        <div class="input-group mb-2">
+            <p>Vous n'êtes pas encore membre? Rejoignez-nous <%= button_to "S'inscrire", user_registration_path %></p>
+        </div>
     </div>
 <% end %>
 
-<p>Jamais inscrit? <%= button_to "S'inscrire", user_registration_path %></p>
+    

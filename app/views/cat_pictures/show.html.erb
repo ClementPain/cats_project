@@ -1,7 +1,7 @@
-<div class="container mt-5"  >
+<div class="container mt-5">
     <div class="row justify-content-sm-center" style="height:400px">
         <div class="col-sm-8 div-img center">
-            <img class="img-responsive rounded" src="<%= @cat.image_url %>" style='height: 60%; width: 100%;'/>
+            <img class="img-responsive" src="<%= @cat.image_url %>" style='height: 500px; width: 500px;'/>
         </div>
     
         <div class="col-sm-4 bg-light">
@@ -23,11 +23,12 @@
             <div class="row mt-2">
                 <p><%= @cat.description %></p>
             
-                <div class="cont-box mt-4" style="font-size:14px;">
-                    <i class="fas fa-shipping-fast"> LIVRAISON </i> 
+                <div class="cont-box mt-3" >
+                    <i class="fas fa-shipping-fast"> Livraison </i> 
                     <p> Les posters seront envoyés sous format numérique par mail.</p>
-                    <i class="far fa-credit-card"> PAIEMENTS SECURISES </i>
-                    <p> via Paypal ou Carte Bancaire</p>
+                    <i class="far fa-credit-card"> Paiement sécurisé </i>
+                    <p> via Stripe et Carte Bancaire</p>
+                    <img src="https://media.oovatu.com/infographies/Avis_Qbab-3glekKJoDlgZaaz0A.png" width="500px" height="200px">
                 </div>
             </div> 
         </div>

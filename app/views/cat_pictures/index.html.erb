@@ -11,21 +11,21 @@
       <!-- Slide One - Set the background image for this slide in the line below -->
       <div class="carousel-item active" style="background-image: url('https://alternativi.fr/uploads/articles//les-bienfaits-du-chat-sur-lhomme-e96.jpeg')">
         <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Cats Project</h2>
+          <h2 class="display-4">Kitty's Wall</h2>
           <p class="lead">Achate Meow!</p>
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
       <div class="carousel-item" style="background-image: url('https://www.iams.com/images/default-source/article-image/article_stomach-issues-in-cats-why-cats-vomit-and-what-to-do_header.jpg')">
         <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Cats Project</h2>
+          <h2 class="display-4">Kitty's Wall</h2>
           <p class="lead">Je Souris sur les Photos!</p>
         </div>
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
       <div class="carousel-item" style="background-image: url('https://www.winnfelinefoundation.org/images/default-source/istock-photos/istock-859654404.jpg?sfvrsn=2')">
         <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Cats Project</h2>
+          <h2 class="display-4">Kitty's Wall</h2>
           <p class="lead">Miaounifique!</p>
         </div>
       </div>
@@ -42,20 +42,24 @@
 </header>
 
 
-<div class="container">
-  	<div class="row">
-		<% @cat_pictures.each do |item|%>
-			<div class="col-12 col-sm-8 col-md-6 col-lg-4 mt-4">
-				<div class="card">
-					<%= image_tag item.image_url, size: '300x300', style: "border-radius: 30px;" %>
-					<h4 class="card-title"><%= item.title %></h4>
-					<p class="card-price"><%= item.price%>€</p>
-					<%= link_to 'Voir le produit', cat_picture_path(item.id) %>
-					<%= render partial: 'button_add_to_cart', locals: {item: item} %>
+	<div class="container">
+		<div class="py-5 text-center">
+			<h4>Touts nos posters de chatons</h4>
+		</div>
+		<div class="row">
+			<% @cat_pictures.each do |item|%>
+				<div class="col-12 col-sm-8 col-md-6 col-lg-4 mt-4">
+					<div class="card">
+						<%= image_tag item.image_url, size: '300x300', style: "border-radius: 30px;" %>
+						<h4 class="card-title"><%= item.title %></h4>
+						<p class="card-price"><%= item.price%>€</p>
+						<%= link_to 'Voir le produit', cat_picture_path(item.id) %>
+						<%= render partial: 'button_add_to_cart', locals: {item: item} %>
+					</div>
 				</div>
-			</div>
-		<% end %>	    
-   	</div>
-</div>
+			<% end %>	    
+		</div>
+		
+	</div>
   
 </div>
