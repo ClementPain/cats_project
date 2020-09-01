@@ -49,8 +49,13 @@
 		<div class="row">
 			<% @cat_pictures.each do |item|%>
 				<div class="col-12 col-sm-8 col-md-6 col-lg-4 mt-4">
-					<div class="card">
-						<%= image_tag item.image_url, size: '300x300', style: "border-radius: 30px;" %>
+          <div class="card">
+            <% if item.image_url %>
+              <%= image_tag item.image_url, size: '300x300', style: "border-radius: 30px;" %>
+            <% else %>
+              <%= image_tag item.cat_image, size: '300x300', style: "border-radius: 30px;" %>
+            <% end %>
+
 						<h4 class="card-title"><%= item.title %></h4>
 						<p class="card-price"><%= item.price%>€</p>
 						<%= link_to 'Voir le produit', cat_picture_path(item.id) %>

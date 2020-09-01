@@ -1,7 +1,11 @@
 <div class="container mt-5">
     <div class="row justify-content-sm-center" style="height:400px">
         <div class="col-sm-8 div-img center">
-            <img class="img-responsive" src="<%= @cat.image_url %>" style='height: 500px; width: 500px;'/>
+            <% if @cat.image_url %>
+                <%= image_tag @cat.image_url, style: "border-radius: 30px; max-height: 700px", class:"img-responsive" %>
+            <% else %>
+                <%= image_tag @cat.cat_image, size:'700x700', style: "border-radius: 30px;", class:"img-responsive" %>
+            <% end %>
         </div>
     
         <div class="col-sm-4 bg-light">

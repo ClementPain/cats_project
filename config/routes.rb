@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'pages/about_us'
   root 'cat_pictures#index'
+  get 'pages/about_us', to: 'pages#about_us'
+
   devise_for :users
   resources:cat_pictures
   

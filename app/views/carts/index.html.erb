@@ -17,8 +17,7 @@
     </div>
 
     <div class="row justify-content-end pr-4">
-    
-        <div class="col-md-2">
+    <div class="col-md-2">
             <h4>Total : <%= @cart.cat_pictures.sum(:price) %> €</h4>
             <%= button_to 'Passer la commande', class: 'btn btn-success' %>
         </div>
