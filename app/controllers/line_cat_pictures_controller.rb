@@ -28,9 +28,9 @@ class LineCatPicturesController < ApplicationController
   def create
     if current_user
       LineCatPicture.create(cart_id:current_user.cart.id, cat_picture_id:params[:cat_picture_id])
-      redirect_to(root_path)
+      redirect_to root_path, notice: "La photo #{CatPicture.find(params[:cat_picture_id]).title} a bien été ajoutée à ton panier ! Bien joué petit génie !"
     else
-      redirect_to(new_user_registration_path)
+      redirect_to new_user_registration_path, alert: "Veuillez vous connecter"
     end
     
     # respond_to do |format|
