@@ -21,7 +21,7 @@
             <h4>Total : <%= @cart.cat_pictures.sum(:price) %> €</h4>
 
             <% if @cart.line_cat_pictures.size > 0 %>
-                <%= button_to 'Passer la commande', class: 'btn btn-success' %>
+                <%= button_to 'Passer la commande', user_orders_path, method: :post, class: 'btn btn-success' %>
             <% end %>
         </div>
     </div>

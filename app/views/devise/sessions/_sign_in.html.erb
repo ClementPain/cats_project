@@ -34,11 +34,12 @@
          <div class="input-group mb-2">
             <%= f.submit "Se connecter" %>
         </div>
-
-        <div class="input-group mb-2">
-            <p>Vous n'êtes pas encore membre? Rejoignez-nous <%= button_to "S'inscrire", user_registration_path %></p>
-        </div>
     </div>
 <% end %>
+
+<div class="container col-md-6 justify-content-sm-center mt-4">
+    <p>Vous n'êtes pas encore membre? Rejoignez-nous <%= button_to "S'inscrire", new_user_registration_path, method: :get %></p>
+</div>
+
 
     
