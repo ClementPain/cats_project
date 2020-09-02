@@ -16,6 +16,6 @@ class OrdersController < ApplicationController
         current_user.cart.destroy
         
         #renvoyer l'utilisateur vers ...
-        redirect_to user_carts_path, alert: "Votre commande est bien validée"
+        redirect_to root_path, alert: "Votre panier est bien validé"
     end
 end

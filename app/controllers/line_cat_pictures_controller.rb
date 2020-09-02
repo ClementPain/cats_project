@@ -27,6 +27,10 @@ class LineCatPicturesController < ApplicationController
   # POST /line_cat_pictures.json
   def create
     if current_user
+      
+      # créer un panier si l'utilisateur n'en a pas
+      Cart.create(user:current_user) if !current_user.cart
+
       LineCatPicture.create(cart_id:current_user.cart.id, cat_picture_id:params[:cat_picture_id])
       redirect_to root_path, notice: "La photo #{CatPicture.find(params[:cat_picture_id]).title} a bien été ajoutée à ton panier ! Bien joué petit génie !"
     else

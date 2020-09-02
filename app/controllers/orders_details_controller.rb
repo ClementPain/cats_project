@@ -1,5 +1,5 @@
-require 'dotenv'
-
+class OrdersDetailsController < ApplicationController
+end
 class OrdersDetailsController < ApplicationController
 
   Dotenv.load
