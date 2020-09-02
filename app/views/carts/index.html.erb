@@ -3,7 +3,7 @@
         <h2>Panier</h2>
     </div>
     <div class="row justify-content-around">
-        <% if @cart.line_cat_pictures.nil? %>
+        <% if @cart.line_cat_pictures.size === 0 %>
             <p>Votre panier est vide</p>
        
         <%else%>
@@ -19,9 +19,12 @@
     <div class="row justify-content-end pr-4">
     <div class="col-md-2">
             <h4>Total : <%= @cart.cat_pictures.sum(:price) %> €</h4>
-            <%= button_to 'Passer la commande', class: 'btn btn-success' %>
+
+            <% if @cart.line_cat_pictures.size > 0 %>
+                <%= button_to 'Passer la commande', class: 'btn btn-success' %>
+            <% end %>
         </div>
     </div>
 
     <p><%= link_to "Retour aux produits", root_path %></p>
-</div>
+</div> 

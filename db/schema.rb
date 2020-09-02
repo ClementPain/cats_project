@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_152634) do
+ActiveRecord::Schema.define(version: 2020_09_02_061900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,13 @@ ActiveRecord::Schema.define(version: 2020_09_01_152634) do
     t.index ["cat_picture_id"], name: "index_line_cat_pictures_on_cat_picture_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -77,4 +84,5 @@ ActiveRecord::Schema.define(version: 2020_09_01_152634) do
   add_foreign_key "carts", "users"
   add_foreign_key "line_cat_pictures", "carts"
   add_foreign_key "line_cat_pictures", "cat_pictures"
+  add_foreign_key "orders", "users"
 end
