@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   
   resource :user do
     resources :carts, only: [:index, :create, :destroy]
-    resources :orders
+    resources :orders, only: [:index, :show, :create, :destroy]
   end
 
   resources :line_cat_pictures, only: [:create, :destroy]
+
+  resources :orders_details, only: [:create, :destroy]
 end
