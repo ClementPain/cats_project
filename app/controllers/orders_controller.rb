@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
     def create
         # créer une commande liée au client
-        @order=Order.create(user:current_user)
+        @order=Order.new(user:current_user)
         @order_details = current_user.cart.cat_pictures
         
 
@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
             OrdersDetail.create(order:@order, cat_picture:image)
         end
         
+        @order.create
 
         #détruire le panier
         current_user.cart.line_cat_pictures.destroy

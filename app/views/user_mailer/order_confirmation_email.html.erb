@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Merci pour ta commande  <%= @user.first_name || @user.email %></h1>
+    <h2>Récapitulatif de la commande n°<%= @order.id %></h2>
+    
+    <% @order.cat_pictures.each do |item| %>
+        <%= item.title %>
+    <%end%>
+    
+    <p>
+      Pour accéder à ton espace, connecte-toi via : <%= @url %>.
+    </p>
+    <p> À très vite sur Kitty's Wall !</p>
+  </body>
+</html>

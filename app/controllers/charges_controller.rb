@@ -21,7 +21,7 @@ class ChargesController < ApplicationController
     })
     
     # créer une commande liée au client
-    @order=Order.create(user:current_user)
+    @order=Order.new(user:current_user)
     @order_details = current_user.cart.cat_pictures
     
     # créer x éléments de la commande en récupérant les éléments du panier
@@ -29,6 +29,8 @@ class ChargesController < ApplicationController
         OrdersDetail.create(order:@order, cat_picture:image)
     end
     
+    @order.save
+
     #détruire le panier
     current_user.cart.line_cat_pictures.destroy
     current_user.cart.destroy

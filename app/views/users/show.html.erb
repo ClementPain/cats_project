@@ -4,7 +4,9 @@
         <h1 class="card-title "> Page Profil</h1>
             
         <%if @user.avatar.attached?%>
-            <%= image_tag @user.avatar, alt: 'avatar' %>
+        <div style="width:150px; height:150px;">
+            <%= image_tag @user.avatar, style:'width:100%; height: 100%', alt: 'avatar' %>
+            </div>
         <%else%>
             <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
         <%end%>
