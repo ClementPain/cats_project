@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
-  after_create :confirmation_send
-  after_create :notice_send
+  after_save :confirmation_send
+  after_save :notice_send
   
 
   belongs_to :user
