@@ -18,3 +18,4 @@ module CatsProject
     config.action_mailer.delivery_method = :mailjet_api
   end
 end
+

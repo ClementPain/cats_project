@@ -54,7 +54,7 @@ class LineCatPicturesController < ApplicationController
   def update
     respond_to do |format|
       if @line_cat_picture.update(line_cat_picture_params)
-        format.html { redirect_to @line_cat_picture, notice: 'Line cat picture was successfully updated.' }
+        format.html { redirect_to @line_cat_picture, notice: 'Cat picture a été mis à jour avec succes.' }
         format.json { render :show, status: :ok, location: @line_cat_picture }
       else
         format.html { render :edit }

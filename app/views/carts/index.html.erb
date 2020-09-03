@@ -1,30 +1,88 @@
-<div class="container-fluid">
-    <div class="row py-4 justify-content-center">
-        <h2>Panier</h2>
-    </div>
-    <div class="row justify-content-around">
+
+
+<style type="text/css">
+    .table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control{
+        width:20%;
+        display: inline !important;
+    }
+    .actions .btn{
+        width:36%;
+        margin:1.5em 0;
+    }
+    
+    
+    table#cart thead { display: none; }
+    table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+    table#cart tbody tr td:first-child { background: #333; color: #fff; }
+    table#cart tbody td:before {
+        content: attr(data-th); font-weight: bold;
+        display: inline-block; width: 8rem;
+    }
+    
+    
+    
+    table#cart tfoot td{display:block; }
+    table#cart tfoot td .btn{display:block;}
+    
+}
+</style>
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<h2 class="text-center mt-4">Mon panier</h2>
+<div class="container mt-4">
+    <table id="cart" class="table table-hover table-condensed">
         <% if @cart.line_cat_pictures.size === 0 %>
             <p>Votre panier est vide</p>
-       
-        <%else%>
-            <% @cart.line_cat_pictures.each do |line_item| %>
-                <div class="col-md-3 py-3" align="center">
-                    <%= render partial: "shared/card_cat", locals: {item: line_item.cat_picture} %>
-                    <%= button_to 'Retirer du panier', line_cat_picture_path(line_item.id), method: :delete, class: 'btn btn-danger', params: { cat_picture_id: line_item.cat_picture.id } %>
-                </div>
-            <% end %>
-        <% end %>
-    </div>
-
-    <div class="row justify-content-end pr-4">
-    <div class="col-md-2">
-            <h4>Total : <%= @cart.cat_pictures.sum(:price) %> €</h4>
-
-            <% if @cart.line_cat_pictures.size > 0 %>
-                <%= button_to 'Passer la commande', new_charge_path, method: :get, class: 'btn btn-success' %>
-            <% end %>
-        </div>
-    </div>
-
-    <p><%= link_to "Retour aux produits", root_path %></p>
-</div> 
+                <%else%>
+                    <thead>
+                        <tr>
+                            <th style="width:50%">Produit</th>
+                            <th style="width:10%">Prix</th>
+                            <th style="width:8%">Quantité</th>
+                            <th style="width:22%" class="text-center">Sous-total</th>
+                            <th style="width:10%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @cart.line_cat_pictures.each do |line_item| %>
+                        <tr>
+                            <td data-th="Product">
+                                    <div class="row">
+                                        <div class="col-sm-10 mt-2">
+                                        <%= image_tag line_item.cat_picture.image_url, size: '100x100'%></div>
+                                        <div class="col-sm-10 mt-2">
+                                            <h4 class="nomargin"><%= line_item.cat_picture.title %></h4>
+                                            <p><%= line_item.cat_picture.description %></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="Price"><%= line_item.cat_picture.price %> €</td>
+                                <td data-th="Quantity">
+                                    <input type="number" class="form-control text-center" value="1">
+                                </td>
+                                <td data-th="Subtotal" class="text-center"><%= line_item.cat_picture.price %> €</td>
+                                <td class="actions" data-th="">
+                                    <%= button_to 'Retirer du panier', line_cat_picture_path(line_item.id), method: :delete, class: 'btn btn-danger', params: { cat_picture_id: line_item.cat_picture.id } %>                               
+                                </td>     
+                        </tr>
+                        <% end %>
+                    </tbody>
+                    <tfoot>
+                        
+                        <tr>
+                            <td><%= link_to "Retour aux produits", root_path %>></td>
+                            <td colspan="2" class="hidden-xs"></td>
+                            <td class="hidden-xs text-center"><strong>Total <%= @cart.cat_pictures.sum(:price) %> € </strong></td>
+                            <td>
+                            <% if @cart.line_cat_pictures.size > 0 %>
+                            <%= button_to 'Passer la commande', new_charge_path, method: :get, class: 'btn btn-success' %>
+                            <% end %> </td>
+                        </tr>
+                    </tfoot>
+                    <% end %>
+                </table>
+</div>

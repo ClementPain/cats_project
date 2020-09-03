@@ -1,0 +1,3 @@
+<% if can? :edit, CatPicture %>
+    <%= button_to 'Modifier le produit', edit_cat_picture_path(item), method: :get, class: 'btn btn-warning', params: { cat_picture_id: item } %>
+<% end %>

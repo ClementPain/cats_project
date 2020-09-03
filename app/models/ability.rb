@@ -15,7 +15,7 @@ class Ability
         can :manage, Order
         can :manage, User
       else
-        can :read, CatPicture
+        can :read, CatPicture, {insale: true}
         can :manage, Cart, { user_id: user.id }
         can [:create, :destroy], LineCatPicture, { cart: { user_id: user.id }}
         can :read, Order, { user_id: user.id }

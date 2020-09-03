@@ -1,0 +1,7 @@
+<% if can? :edit, CatPicture %>
+    <% if item.insale %>
+        <%= button_to 'Retirer le produit à la vente', cat_picture_path(item), method: :delete, class: 'btn btn-danger', params: { cat_picture_id: item } %>
+    <% else %>
+        <%= button_to 'Ajouter le produit à la vente', cat_picture_path(item), method: :delete, class: 'btn btn-success', params: { cat_picture_id: item } %>
+    <% end %>
+<% end %>

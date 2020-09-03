@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
       customer: customer.id,
       amount: @amount,
       description: 'Rails Stripe customer',
-      currency: 'usd',
+      currency: 'eur',
     })
     
     # créer une commande liée au client

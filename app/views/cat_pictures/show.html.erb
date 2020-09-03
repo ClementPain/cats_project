@@ -18,6 +18,8 @@
             <!-- Boutons -->
             <div class="row">
                 <%= render partial: 'button_add_to_cart', locals: {item: @cat} %>
+                <span class="ml-2"><%= render partial: 'modify_item', locals: {item: @cat} %></span>
+                <span class="ml-2"><%= render partial: 'delete_item', locals: {item: @cat} %></span>
             </div>
 
             <div class="row mt-4"> 
