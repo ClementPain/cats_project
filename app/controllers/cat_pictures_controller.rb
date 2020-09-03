@@ -1,7 +1,8 @@
 class CatPicturesController < ApplicationController
+    load_and_authorize_resource
     
     def index
-    	@cat_pictures = CatPicture.all
+        @cat_pictures = CatPicture.all
     end
 
     def show

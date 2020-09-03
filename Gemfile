@@ -67,5 +67,6 @@ gem 'faker'
 gem 'stripe'
 gem 'dotenv'
 gem 'rubocop'
-gem 'mailjet'
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 gem 'cancancan'
+gem "mini_magick"

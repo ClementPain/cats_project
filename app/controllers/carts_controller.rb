@@ -1,10 +1,9 @@
 class CartsController < ApplicationController
-  
-
+  before_action :set_cart, only: [:show, :index, :destroy]
+  authorize_resource
   
   
   def index
-    @cart = Cart.find_by(user_id:current_user.id) || @cart = Cart.create(user_id:current_user.id)
   end
 
   def new
@@ -19,6 +18,11 @@ class CartsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def set_cart
+    @cart = current_user.cart || @cart = Cart.create(user_id:current_user.id)
   end
 
 end

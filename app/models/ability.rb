@@ -4,6 +4,25 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+
+    user ||= User.new # guest user (not logged in)
+    Role.create(title:"admin", description:"pour les admins") if Role.count === 0
+
+      if user.roles.include?(Role.find_by(title:"admin")) #role : admin
+        can :manage, CatPicture
+        can :manage, Cart
+        can :manage, LineCatPicture
+        can :manage, Order
+        can :manage, User
+      else
+        can :read, CatPicture
+        can :manage, Cart, { user_id: user.id }
+        can [:create, :destroy], LineCatPicture, { cart: { user_id: user.id }}
+        can :read, Order, { user_id: user.id }
+        can :show, User
+      end
+
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
