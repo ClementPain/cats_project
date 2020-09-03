@@ -3,9 +3,9 @@
 
 ![alt text](https://archzine.fr/wp-content/uploads/2016/02/coloriage-de-chat-image-mignonne-petit-chat-mignon-chaton-trop-mignon.jpg "Image")
 
-Pour lancer notre boutique en ligne:
+Pour lancer notre boutique en ligne, voici les commandes:
 
-Sur votre terminal
+En local sur votre terminal:
 1. $ git clone https://github.com/ClementPain/cats_project
 2. $ bundle install
 3. $ rails db:drop
@@ -14,6 +14,7 @@ Sur votre terminal
 6. $ rails db:seed
 6. $ PUBLISHABLE_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx \
 SECRET_KEY=sk_test_4eC39HqLyjWDarjtT1zdp7dc rails s
+7. Lancer localhost:3000 sur votre navigateur web
 
 ou  
 
