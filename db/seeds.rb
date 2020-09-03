@@ -8,6 +8,9 @@
 
 require 'faker'
 
+CatPicture.destroy_all
+Role.destroy_all
+
     CatPicture.create(title: "J'ai faiiiiim",  
      description:Faker::GreekPhilosophers.quote, 
      price:rand(10..60),

@@ -1,6 +1,7 @@
 <div class="row mb-2">
     <div class="col-md-3">
-        <h4 class="align-middle">Commande n°<%=order.id%></h4>
+        <h4 class="align-middle mb-2">Commande n°<%=order.id%></h4>
+        <p>Montant : <%= order.amount %></p>
     </div>
     <div class="col-md-9">
         <% order.orders_details.each do |item| %>
