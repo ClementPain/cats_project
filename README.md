@@ -6,14 +6,14 @@
 Pour lancer notre boutique en ligne, voici les commandes:
 
 En local sur votre terminal:
-1. $ git clone https://github.com/ClementPain/cats_project
-2. $ bundle install
-3. $ rails db:drop
-4. $ rails db:create
-5. $ rails db:migrate
-6. $ rails db:seed
-6. $ PUBLISHABLE_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx \
-SECRET_KEY=sk_test_4eC39HqLyjWDarjtT1zdp7dc rails s
+1. ``` $ git clone https://github.com/ClementPain/cats_project ```
+2. ``` $ bundle install ```
+3. ``` $ rails db:drop ```
+4. ``` $ rails db:create ```
+5. ``` $ rails db:migrate ```
+6. ``` $ rails db:seed ```
+6. ``` $ PUBLISHABLE_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx \
+SECRET_KEY=sk_test_4eC39HqLyjWDarjtT1zdp7dc rails s ```
 7. Lancer localhost:3000 sur votre navigateur web
 
 ou  
