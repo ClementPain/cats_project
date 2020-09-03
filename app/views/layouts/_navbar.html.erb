@@ -50,7 +50,7 @@
               <div class="cart-image">
                 <i class="fas fa-shopping-cart"></i>
                 <%if current_user.cart %>
-                  <div class="cart-counter"><%= current_user.cart.cat_pictures.size %></div>
+                  <div class="cart-counter"><%= current_user.cart.line_cat_pictures.sum(:quantity) %></div>
                 <% else %>
                   <div class="cart-counter">0</div>
                 <% end %>

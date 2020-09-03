@@ -1,12 +1,12 @@
 class ChargesController < ApplicationController
+  before_action :set_amount, only: [:new, :create]
+
   def new
-    @amount = current_user.cart.cat_pictures.sum(:price)
   end
   
   def create
     # Amount in cents
-    @amount_view = current_user.cart.cat_pictures.sum(:price)
-    @amount = (@amount_view*100).to_i
+    @amount_stripe = (@amount*100).to_i
   
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -15,13 +15,13 @@ class ChargesController < ApplicationController
   
     charge = Stripe::Charge.create({
       customer: customer.id,
-      amount: @amount,
+      amount: @amount_stripe,
       description: 'Rails Stripe customer',
       currency: 'eur',
     })
     
     # créer une commande liée au client
-    @order=Order.new(user:current_user)
+    @order=Order.new(user:current_user, amount:@amount)
     @order_details = current_user.cart.cat_pictures
     
     # créer x éléments de la commande en récupérant les éléments du panier
@@ -38,5 +38,11 @@ class ChargesController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
+  end
+
+  private
+  def set_amount
+    @amount = 0
+    current_user.cart.line_cat_pictures.each { |item| @amount += item.quantity * item.cat_picture.price }
   end
 end

@@ -4,6 +4,8 @@ class CartsController < ApplicationController
   
   
   def index
+    @cart_total = 0
+    @cart.line_cat_pictures.each { |item| @cart_total += item.quantity * item.cat_picture.price }
   end
 
   def new

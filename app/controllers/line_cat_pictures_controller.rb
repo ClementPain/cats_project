@@ -32,7 +32,14 @@ class LineCatPicturesController < ApplicationController
       # créer un panier si l'utilisateur n'en a pas
       Cart.create(user:current_user) if !current_user.cart
 
-      LineCatPicture.create(cart_id:current_user.cart.id, cat_picture_id:params[:cat_picture_id])
+      @line = LineCatPicture.find_by(cart_id:current_user.cart.id, cat_picture_id:params[:cat_picture_id])
+      if @line
+        @line.quantity += 1
+        @line.save
+      else
+        LineCatPicture.create(cart_id:current_user.cart.id, cat_picture_id:params[:cat_picture_id])
+      end
+
       redirect_to root_path, notice: "La photo #{CatPicture.find(params[:cat_picture_id]).title} a bien été ajoutée à ton panier ! Bien joué petit génie !"
     else
       redirect_to new_user_registration_path, alert: "Veuillez vous connecter"
