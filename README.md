@@ -21,11 +21,11 @@ ou
 
 Notre équipe est composé de:
 
-⋅⋅* Caroline KINOUANI
-..* Fatouma KARAMOKO
-..* Camillia MEDDAHI
-..* Clément PAIN
-..* Ton LY-GONNEVILLE
+- Caroline KINOUANI
+- Fatouma KARAMOKO
+- Camillia MEDDAHI
+- Clément PAIN
+- Ton LY-GONNEVILLE
 
 # ENJOY
 
