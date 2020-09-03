@@ -65,6 +65,8 @@ require 'faker'
      price:rand(10..60),
      image_url: "https://i.pinimg.com/originals/8b/02/d4/8b02d48a697200e2f6d60efcfd42f74c.jpg")
 
+     Role.create(title:"admin", description:"pour les admins")
+
 
 
 

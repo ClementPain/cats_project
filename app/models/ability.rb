@@ -5,12 +5,21 @@ class Ability
 
   def initialize(user)
 
-    user ||= USer.new # guest user (not logged in)
-      can :read, CatPicture
-      can :manage, Cart, { user_id: user.id }
-      can [:create, :destroy], LineCatPicture, { cart: { user_id: user.id }}
-      can :read, Order, { user_id: user.id }
-      can :show, User
+    user ||= User.new # guest user (not logged in)
+
+      if user.roles.include?(Role.find(1)) #role : admin
+        can :manage, CatPicture
+        can :manage, Cart
+        can :manage, LineCatPicture
+        can :manage, Order
+        can :manage, User
+      else
+        can :read, CatPicture
+        can :manage, Cart, { user_id: user.id }
+        can [:create, :destroy], LineCatPicture, { cart: { user_id: user.id }}
+        can :read, Order, { user_id: user.id }
+        can :show, User
+      end
 
 
     # Define abilities for the passed in user here. For example:

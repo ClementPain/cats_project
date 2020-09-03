@@ -9,6 +9,8 @@ class User < ApplicationRecord
   
   has_one:cart
   has_many:orders
+  has_many :user_roles, dependent: :destroy
+  has_many :roles, through: :user_roles
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
