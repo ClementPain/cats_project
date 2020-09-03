@@ -1,6 +1,6 @@
 class CreateRoles < ActiveRecord::Migration[5.2]
   def change
-    acreate_table :roles do |t|
+    create_table :roles do |t|
       t.string :title, presence: true
       t.text :description
 
