@@ -4,6 +4,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+
+    user ||= USer.new # guest user (not logged in)
+      can :read, CatPicture
+      can :manage, Cart, { user_id: user.id }
+      can [:create, :destroy], LineCatPicture, { cart: { user_id: user.id }}
+      can :read, Order, { user_id: user.id }
+      can :show, User
+
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

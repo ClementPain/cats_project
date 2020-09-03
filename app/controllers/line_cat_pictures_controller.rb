@@ -2,6 +2,7 @@ class LineCatPicturesController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create]
   before_action :set_line_cat_picture, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
   # GET /line_cat_pictures
   # GET /line_cat_pictures.json
