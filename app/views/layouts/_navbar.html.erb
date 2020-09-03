@@ -25,8 +25,11 @@
           <!-- Utilisateur connecté -->
           <% if user_signed_in? %>
             <%= link_to "Mon profil", user_path, method: :get, class:"nav-link" %>
-            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"nav-link" %>
             <%= link_to "Voir le panier", user_carts_path, class:"nav-link" %>
+            <% if can? :create, CatPicture %>
+                <%= link_to "Ajouter un produit", new_cat_picture_path, class:"nav-link" %>
+            <% end %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"nav-link" %>
 
           <!-- Utilisateur non connecté -->
           <% else %>

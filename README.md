@@ -18,7 +18,7 @@ En local sur votre terminal:
 
 ou  
 
-[Heroku app](https://git.heroku.com/catsproject33.git)
+[Heroku app](https://catsproject33.herokuapp.com/)
 
 Notre équipe est composé de:
 

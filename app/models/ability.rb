@@ -8,7 +8,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     Role.create(title:"admin", description:"pour les admins") if Role.count === 0
 
-      if user.roles.include?(Role.find(1)) #role : admin
+      if user.roles.include?(Role.find_by(title:"admin")) #role : admin
         can :manage, CatPicture
         can :manage, Cart
         can :manage, LineCatPicture

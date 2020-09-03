@@ -69,3 +69,4 @@ gem 'dotenv'
 gem 'rubocop'
 gem 'mailjet'
 gem 'cancancan'
+gem "mini_magick"
