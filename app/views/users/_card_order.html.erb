@@ -1,9 +1,9 @@
-<div class="row mb-5">
+<div class="row mb-2">
     <div class="col-md-3">
-        <h4>Commande n°<%=@order.id%></h4>
+        <h4 class="align-middle">Commande n°<%=order.id%></h4>
     </div>
     <div class="col-md-9">
-        <% @order.order_details.each do |item| %>
+        <% order.orders_details.each do |item| %>
             <div class="row">
                 * <%= item.cat_picture.title %>
             </div>
