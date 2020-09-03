@@ -1,21 +1,34 @@
-<div class="container" style= "margin-bottom: 45px">
-    <div class="row">
-        <h1>Page Profil</h1>
-        <div class="col-sm-12 ">
-            <h2 class="card-title "> Profil <%= @user.first_name || "" %></h2>
-                
-            <%if @user.avatar.attached?%>
-                <%= image_tag @user.avatar, alt: 'avatar' %>
-            <%else%>
-                <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
-            <%end%>
+<div class="container-fluid row" style= "margin: 45px">
 
+    <div class="col-sm-6 ">
+        <h1 class="card-title "> Page Profil</h1>
+            
+        <%if @user.avatar.attached?%>
+            <%= image_tag @user.avatar, alt: 'avatar' %>
+        <%else%>
+            <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+        <%end%>
+        
+        <div class="container">
             <p>Prénom : <%=@user.first_name || "" %></p>
             <p>Nom : <%=@user.last_name || "" %></p>
             <p>Description : <%= @user.description || "" %></p>
             <p>Email : <%= @user.email %></p>
-                
         </div>
+        
+        <%= button_to 'Modifier le profil', edit_user_path, method: :get, class: 'btn btn-primary' %>
+    </div>
+
+    <div class="col-sm-6 ">
+        <h1>Vos commandes</h1>
+        <% if @user.orders.size > 0 %>
+            <% @user.orders.each do |order| %>
+                <%= order.id %>
+            <% end %>
+        <%else%>
+
+            <p>Vous navez pas encore passé de commande</p>
+        <%end%>
     </div>
 </div>
         

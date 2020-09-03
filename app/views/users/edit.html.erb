@@ -1,3 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">  
+      <br><br><br>
+
+      <%= form_for @user do |f| %>
+
 <!-- Title -->
 <div class="text-center mb-4">
     <h3>Profil</h3>
@@ -6,39 +13,34 @@
 <!-- End Title -->
     
 <!-- Formulaire -->
-<div class="container col-md-6 justify-content-sm-center">
-
-    <!-- Case précédent le formulaire -->
-    <div class="input-group mb-2">
-        <div class="input-group-prepend">
-            <span class="input-group-text">
-                <span class="fa fa-user form__text-inner"></span>
-            </span>
-            </div>
-            </div>
 
             <div class="form-group">
-                <label class="col-form-label" for="inputDefault">Votre Prénom</label>
-                <input type="text" class="form-control" id="inputDefault">
+                <%= f.label :first_name, 'Votre Prénom' %>
+                <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control" %>
             </div>    
 
             <div class="form-group">
-                <label class="col-form-label" for="inputDefault">Votre Nom</label>
-                <input type="text" class="form-control" id="inputDefault">
-            </div>
+                <%= f.label :last_name, 'Votre Nom' %>
+                <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control" %>
+            </div>    
 
             <div class="form-group">
-                <label for="exampleTextarea">Votre description</label>
-                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-            </div>
+          <%= f.label :description, 'Votre description : ' %>
+          <%= f.text_area :description, autofocus: true, autocomplete: "description", class: "form-control" %>
+        </div>
 
-            <div class="form-group">
-                <label for="exampleInputFile">Votre avatar</label>
-                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-            </div>
+            <!-- création avatar  -->
+        
+        <div class= "form-group">
+          <%= f.label :avatar, 'Ajoute un avatar : ' %>
+          <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class: "form-control" %>
+        </div>
 
-            <button type="submit" class="btn btn-primary">Valider votre profil</button>
+        <div class="actions mt-5">
+          <%= f.submit "Publier votre profil", class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+
+        <% end %>    
         </div>
     </div>
 </div>  
-<!-- End Title -->
