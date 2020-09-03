@@ -1,0 +1,8 @@
+Récapitulatif de la commande n°<%= @order.id %>
+    
+Utilisateur : <%= @user.email %>
+Montant : <%= @order.cat_pictures.sum(:price) %> €
+
+    <% @order.cat_pictures.each do |item| %>
+        *<%= item.title %>
+    <%end%>

@@ -14,4 +14,19 @@ class UserMailer < ApplicationMailer
         @url = 'https://catsproject33.herokuapp.com/users/sign_in' 
         mail(to: @user.email, subject: "Votre commande n°#{@order.id} Kitty's Wall")
     end
+
+    def order_notice_email(order)
+        @order = order
+        @user = order.user
+        @url = 'https://catsproject33.herokuapp.com/users/sign_in'
+        
+        @admin = []
+        User.all.each do |user|
+            @admin << user if user.roles.includes(Role.find_by(title:"admin"))
+        end
+
+        @admin.each do |admin|
+            mail(to: admin.email, subject: "Une commande a été passée")
+        end
+    end
 end
