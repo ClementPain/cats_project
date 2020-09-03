@@ -22,7 +22,7 @@ class UserMailer < ApplicationMailer
         
         @admin = []
         User.all.each do |user|
-            @admin << user if user.roles.includes(Role.find_by(title:"admin"))
+            @admin << user if user.roles.include?(Role.find_by(title:"admin"))
         end
 
         @admin.each do |admin|
