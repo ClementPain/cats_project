@@ -1,2 +1,34 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!-- Title -->
+    <div class="text-center mb-4">
+        <h3>Profil</h3>
+        <p>Remplissez le formulaire pour compléter votre profil</p>
+    </div>
+    <!-- End Title -->
+      
+    <!-- Formulaire -->
+    <div class="container col-md-6 justify-content-sm-center">
+
+        <!-- Case précédent le formulaire -->
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <span class="fa fa-user form__text-inner"></span>
+                </span>
+
+                <div class="form-group">
+  <label class="col-form-label" for="inputDefault">Votre Prénom</label>
+  <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+</div>
+
+<div class="form-group">
+  <label class="col-form-label" for="inputDefault">Votre Nom</label>
+  <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+</div>
+
+<div class="form-group">
+      <label for="exampleTextarea">Votre description</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+
+<% end %>
+
