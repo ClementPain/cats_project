@@ -1,0 +1,13 @@
+.div-img img {
+    display:scale-down;
+    object-fit: contain; /* Do not scale the image */
+    object-position: left top; /* Center the image within the element */
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+.div-img {
+        height:auto;
+        overflow:auto;
+}

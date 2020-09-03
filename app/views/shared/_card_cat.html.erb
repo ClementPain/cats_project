@@ -1,0 +1,10 @@
+<div class="card">
+    <% if item.image_url %>
+        <%= image_tag item.image_url, size: '300x300', style: "border-radius: 30px;" %>
+    <% else %>
+        <%= image_tag item.cat_image, size: '300x300', style: "border-radius: 30px;" %>
+    <% end %>
+    
+    <h4 class="card-title"><%= item.title %></h4>
+    <p class="card-price"><%= item.price%>€</p>
+</div>                   

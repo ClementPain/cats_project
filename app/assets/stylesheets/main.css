@@ -1,0 +1,16 @@
+html,
+body {
+
+ overflow:auto;
+ min-height:800px;
+}
+
+.main {
+    min-height:800px;
+    margin-bottom: 30px;
+}
+
+.div-img {
+border-radius: 10px;
+
+}

@@ -29,5 +29,3 @@ Notre équipe est composé de:
 
 # ENJOY
 
-
-

@@ -1,0 +1,13 @@
+/**************************/
+/*        FOOTER  OK      */
+/**************************/
+ 
+#footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    padding-left: 100px;
+    padding-top: 50px;
+}
+

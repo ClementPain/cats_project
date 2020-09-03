@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">  
+      <br><br><br>
+      
+      <%= form_for @cat do |f| %>
+        <h1>Photomatou</h1>
+        
+        <div class="form-group">
+          <%= f.label :title, 'Renseigne un titre : ' %>
+          <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :description, 'Met ta description : ' %>
+          <%= f.text_area :description, autofocus: true, autocomplete: "description", class: "form-control" %>
+        </div>
+     
+        <div class="form-group">
+          <%= f.label :price, 'Balance un prix : ' %>
+          <%= f.text_field :price, autofocus: true, autocomplete: "price", class: "form-control" %>
+        </div>
+
+        <!-- création image  -->
+        
+        <div class= "form-group">
+          <%= f.label :cat_image, 'Ajoute une photo : ' %>
+          <%= f.file_field :cat_image, autofocus: true, autocomplete: "cat_image", class: "form-control" %>
+        </div>
+
+        <div class="actions mt-5">
+          <%= f.submit "Publier l'image", class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

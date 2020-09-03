@@ -1,0 +1,16 @@
+.card {
+    width: 200px;
+    height: 200px;
+    border: 0px #aaa solid;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    
+    
+    }
+   
+  .imgcadre{
+    
+    width: 100%;
+    height: auto; 
+  }
