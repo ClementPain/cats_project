@@ -6,6 +6,7 @@ class Ability
   def initialize(user)
 
     user ||= User.new # guest user (not logged in)
+    Role.create(title:"admin", description:"pour les admins") if Role.count === 0
 
       if user.roles.include?(Role.find(1)) #role : admin
         can :manage, CatPicture
