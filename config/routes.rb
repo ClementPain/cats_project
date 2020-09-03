@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
   root 'cat_pictures#index'
   get 'pages/about_us', to: 'pages#about_us'
 
