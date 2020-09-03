@@ -1,34 +1,22 @@
-<!-- Title -->
-    <div class="text-center mb-4">
-        <h3>Profil</h3>
-        <p>Remplissez le formulaire pour compléter votre profil</p>
+<div class="container" style= "margin-bottom: 45px">
+    <div class="row">
+        <h1>Page Profil</h1>
+        <div class="col-sm-12 ">
+            <h2 class="card-title "> Profil <%= @user.first_name || "" %></h2>
+                
+            <%if @user.avatar.attached?%>
+                <%= image_tag @user.avatar, alt: 'avatar' %>
+            <%else%>
+                <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+            <%end%>
+
+            <p>Prénom : <%=@user.first_name || "" %></p>
+            <p>Nom : <%=@user.last_name || "" %></p>
+            <p>Description : <%= @user.description || "" %></p>
+            <p>Email : <%= @user.email %></p>
+                
+        </div>
     </div>
-    <!-- End Title -->
-      
-    <!-- Formulaire -->
-    <div class="container col-md-6 justify-content-sm-center">
-
-        <!-- Case précédent le formulaire -->
-        <div class="input-group mb-2">
-            <div class="input-group-prepend">
-                <span class="input-group-text">
-                    <span class="fa fa-user form__text-inner"></span>
-                </span>
-
-                <div class="form-group">
-  <label class="col-form-label" for="inputDefault">Votre Prénom</label>
-  <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
 </div>
-
-<div class="form-group">
-  <label class="col-form-label" for="inputDefault">Votre Nom</label>
-  <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
-</div>
-
-<div class="form-group">
-      <label for="exampleTextarea">Votre description</label>
-      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-    </div>
-
-<% end %>
-
+        
+       
